@@ -58,6 +58,110 @@ fn show_main_window(app: &AppHandle) {
     }
 }
 
+const STARTUP_APP_NAME: &str = "MPTechAudioDeviceSwitcher";
+
+#[tauri::command]
+fn set_startup_enabled(enabled: bool) -> Result<(), String> {
+    startup::set_startup_enabled(enabled)
+}
+
+#[tauri::command]
+fn get_startup_enabled() -> Result<bool, String> {
+    startup::get_startup_enabled()
+}
+
+#[cfg(windows)]
+mod startup {
+    use std::process::Command;
+
+    const RUN_KEY: &str = r"HKCU\Software\Microsoft\Windows\CurrentVersion\Run";
+
+    pub fn set_startup_enabled(enabled: bool) -> Result<(), String> {
+        if enabled {
+            let exe_path = std::env::current_exe()
+                .map_err(|error| format!("Could not get current exe path: {error}"))?;
+
+            let exe_path = exe_path
+                .to_str()
+                .ok_or_else(|| "Current exe path is not valid UTF-8.".to_string())?;
+
+            let quoted_path = format!("\"{}\"", exe_path);
+
+            let output = Command::new("reg")
+                .args([
+                    "add",
+                    RUN_KEY,
+                    "/v",
+                    super::STARTUP_APP_NAME,
+                    "/t",
+                    "REG_SZ",
+                    "/d",
+                    &quoted_path,
+                    "/f",
+                ])
+                .output()
+                .map_err(|error| format!("Could not write startup registry key: {error}"))?;
+
+            if output.status.success() {
+                Ok(())
+            } else {
+                Err(String::from_utf8_lossy(&output.stderr).to_string())
+            }
+        } else {
+            let output = Command::new("reg")
+                .args([
+                    "delete",
+                    RUN_KEY,
+                    "/v",
+                    super::STARTUP_APP_NAME,
+                    "/f",
+                ])
+                .output()
+                .map_err(|error| format!("Could not delete startup registry key: {error}"))?;
+
+            if output.status.success() {
+                Ok(())
+            } else {
+                let stderr = String::from_utf8_lossy(&output.stderr).to_string();
+
+                if stderr.to_lowercase().contains("unable to find")
+                    || stderr.to_lowercase().contains("no se encuentra")
+                    || stderr.to_lowercase().contains("el sistema no puede encontrar")
+                {
+                    Ok(())
+                } else {
+                    Err(stderr)
+                }
+            }
+        }
+    }
+
+    pub fn get_startup_enabled() -> Result<bool, String> {
+        let output = Command::new("reg")
+            .args([
+                "query",
+                RUN_KEY,
+                "/v",
+                super::STARTUP_APP_NAME,
+            ])
+            .output()
+            .map_err(|error| format!("Could not read startup registry key: {error}"))?;
+
+        Ok(output.status.success())
+    }
+}
+
+#[cfg(not(windows))]
+mod startup {
+    pub fn set_startup_enabled(_enabled: bool) -> Result<(), String> {
+        Err("Startup settings are only available on Windows.".to_string())
+    }
+
+    pub fn get_startup_enabled() -> Result<bool, String> {
+        Ok(false)
+    }
+}
+
 #[cfg(windows)]
 mod audio {
     use super::AudioDevice;
@@ -353,7 +457,9 @@ fn main() {
             get_app_info,
             list_audio_output_devices,
             set_default_output_device,
-            hide_main_window
+            hide_main_window,
+            set_startup_enabled,
+            get_startup_enabled
         ])
         .run(tauri::generate_context!())
         .expect("error while running Audio Device Switcher");

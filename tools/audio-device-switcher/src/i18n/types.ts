@@ -46,5 +46,10 @@ export type Translation = {
   switchingTo: string;
   defaultChanged: string;
   portableFooter: string;
+  startupEnabledStatus: string;
+  startupDisabledStatus: string;
+  startupError: string;
+  startMinimizedEnabledStatus: string;
+  startMinimizedDisabledStatus: string;
   readyStatus: string;
 };

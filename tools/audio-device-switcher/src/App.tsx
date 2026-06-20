@@ -18,6 +18,7 @@ type AudioDevice = {
 const DEFAULT_HOTKEY = "Control+Alt+A";
 const HOTKEY_STORAGE_KEY = "mptech.audioDeviceSwitcher.hotkey";
 const EXCLUDED_DEVICES_STORAGE_KEY = "mptech.audioDeviceSwitcher.excludedDevices";
+const START_MINIMIZED_STORAGE_KEY = "mptech.audioDeviceSwitcher.startMinimized";
 
 function displayShortcut(shortcut: string): string {
   return shortcut
@@ -94,6 +95,8 @@ export default function App() {
   const [isSwitching, setIsSwitching] = useState(false);
   const [isCapturingHotkey, setIsCapturingHotkey] = useState(false);
   const [hotkey, setHotkey] = useState(() => localStorage.getItem(HOTKEY_STORAGE_KEY) || DEFAULT_HOTKEY);
+  const [startupEnabled, setStartupEnabledState] = useState(false);
+  const [startMinimized, setStartMinimizedState] = useState(() => localStorage.getItem(START_MINIMIZED_STORAGE_KEY) === "true");
   const [registeredHotkey, setRegisteredHotkey] = useState("");
   const [status, setStatus] = useState("");
   const [error, setError] = useState("");
@@ -122,6 +125,43 @@ export default function App() {
   useEffect(() => {
     registeredHotkeyRef.current = registeredHotkey;
   }, [registeredHotkey]);
+
+  async function setStartupEnabled(enabled: boolean) {
+    try {
+      setError("");
+      await invoke("set_startup_enabled", { enabled });
+      setStartupEnabledState(enabled);
+      setStatus(enabled ? t.startupEnabledStatus : t.startupDisabledStatus);
+    } catch (startupError) {
+      setError(t.startupError);
+      setStatus(String(startupError));
+    }
+  }
+
+  function setStartMinimized(enabled: boolean) {
+    setStartMinimizedState(enabled);
+    localStorage.setItem(START_MINIMIZED_STORAGE_KEY, String(enabled));
+    setStatus(enabled ? t.startMinimizedEnabledStatus : t.startMinimizedDisabledStatus);
+  }
+
+  async function loadStartupSettings() {
+    try {
+      const enabled = await invoke<boolean>("get_startup_enabled");
+      setStartupEnabledState(enabled);
+    } catch {
+      setStartupEnabledState(false);
+    }
+  }
+
+  async function maybeStartMinimized() {
+    const shouldStartMinimized = localStorage.getItem(START_MINIMIZED_STORAGE_KEY) === "true";
+
+    if (shouldStartMinimized) {
+      setTimeout(() => {
+        invoke("hide_main_window").catch(() => {});
+      }, 450);
+    }
+  }
 
   async function loadDevices() {
     try {
@@ -242,6 +282,8 @@ export default function App() {
 
   useEffect(() => {
     loadDevices();
+    loadStartupSettings();
+    maybeStartMinimized();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -321,7 +363,7 @@ export default function App() {
           </div>
 
           <div className="device-badge">
-            <strong>{currentDevice ? t.defaultDevice : "—"}</strong>
+            <strong>{currentDevice ? t.defaultDevice : "â€”"}</strong>
             <span>{currentDevice ? t.active : t.notDetected}</span>
           </div>
         </article>
@@ -357,12 +399,20 @@ export default function App() {
           <p className="tray-hint">{t.closeToTrayHint}</p>
 
           <label className="toggle-row">
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              checked={startupEnabled}
+              onChange={(event) => setStartupEnabled(event.target.checked)}
+            />
             <span>{t.startup}</span>
           </label>
 
           <label className="toggle-row">
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              checked={startMinimized}
+              onChange={(event) => setStartMinimized(event.target.checked)}
+            />
             <span>{t.startMinimized}</span>
           </label>
         </article>

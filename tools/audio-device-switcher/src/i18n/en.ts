@@ -46,5 +46,10 @@ export const en: Translation = {
   switchingTo: "Switching to",
   defaultChanged: "Default device changed",
   portableFooter: "Portable Windows micro tool by MPTech Tools.",
+  startupEnabledStatus: "Windows startup enabled.",
+  startupDisabledStatus: "Windows startup disabled.",
+  startupError: "Startup setting could not be changed.",
+  startMinimizedEnabledStatus: "Start minimized enabled.",
+  startMinimizedDisabledStatus: "Start minimized disabled.",
   readyStatus: "Ready"
 };
