@@ -42,3 +42,11 @@ App.tsx.backup-*
 .idea/
 Thumbs.db
 .DS_Store
+# MPTech local backups
+_backups/
+# Node / Tauri build outputs
+**/node_modules/
+**/dist/
+**/target/
+**/.vite/
+**/.tauri/
