@@ -1,0 +1,44 @@
+﻿# Dependencies
+node_modules/
+tools/*/node_modules/
+
+# Build outputs
+dist/
+build/
+target/
+src-tauri/target/
+src-tauri/gen/
+tools/*/dist/
+tools/*/src-tauri/target/
+tools/*/src-tauri/gen/
+
+# Portable builds
+portable/
+tools/*/portable/
+
+# Executables and installers
+*.exe
+*.msi
+*.appx
+*.appxbundle
+
+# Allow official release executable
+!releases/link-downloader/link-downloader.exe
+
+# Logs and temp
+*.log
+*.tmp
+*.bak
+*.backup-*
+App.css.backup-*
+App.tsx.backup-*
+
+# Environment
+.env
+.env.local
+
+# Editors and OS
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
