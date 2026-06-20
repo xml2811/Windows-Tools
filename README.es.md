@@ -1,78 +1,60 @@
 # MPTech Windows Tools
 
-Pequeñas utilidades portables para Windows creadas por MPTech Tools.
+Catalogo de pequenas utilidades portables para Windows creadas por MPTech Tools.
 
-Este repositorio está enfocado en herramientas de escritorio simples para usuarios avanzados, técnicos, desarrolladores, administradores de sistemas y profesionales IT.
+Este repositorio funciona como indice principal de la coleccion de herramientas Windows de MPTech. Cada herramienta tiene su propio repositorio, codigo fuente y GitHub Release.
 
-Sin SaaS. Sin cuentas. Sin servidores. Sin configuración compleja.
+Sin SaaS. Sin cuentas. Sin servidores. Sin configuracion compleja.
 
 ## Herramientas disponibles
 
-### Bulk Link Downloader
+### Audio-Switcher
 
-Herramienta ligera para Windows pensada para procesar y descargar múltiples enlaces rápidamente.
+Herramienta portable para Windows que permite cambiar rapidamente el dispositivo de salida de audio predeterminado.
 
-Casos de uso principales:
+Util para cambiar entre altavoces, auriculares, monitores, audio HDMI, cascos USB o dispositivos virtuales sin abrir la configuracion de sonido de Windows.
 
-- Pegar varios enlaces.
-- Descargar archivos en lote.
-- Mantener un flujo de trabajo local y sencillo.
-- Evitar depender de extensiones del navegador.
+- Repositorio: https://github.com/xml2811/audio-switcher
+- Descargar ultima version: https://github.com/xml2811/audio-switcher/releases/latest
 
-### Audio Device Switcher
+### Link-Downloader
 
-Herramienta portable para Windows que permite cambiar rápidamente el dispositivo de salida de audio predeterminado.
+Herramienta portable para Windows que detecta y descarga enlaces directos pegados como texto.
 
-Casos de uso principales:
+Util para pegar texto mezclado con muchas URLs, detectar enlaces directos de descarga y descargar varios archivos localmente.
 
-- Cambiar entre altavoces, monitores, auriculares o interfaces de audio.
-- Cambiar el dispositivo predeterminado desde una interfaz sencilla.
-- Usar un atajo global de teclado para alternar entre dispositivos.
-- Excluir dispositivos del ciclo del atajo sin deshabilitarlos en Windows.
-- Mantener la app funcionando en segundo plano desde la bandeja del sistema.
+- Repositorio: https://github.com/xml2811/link-downloader
+- Descargar ultima version: https://github.com/xml2811/link-downloader/releases/latest
 
-Funciones actuales:
+## Proximamente
 
-- Detecta dispositivos de salida de audio activos en Windows.
-- Muestra el dispositivo de salida predeterminado actual.
-- Permite marcar un dispositivo como predeterminado.
-- Permite cambiar al siguiente dispositivo.
-- Atajo global configurable.
-- Control para incluir/excluir dispositivos del ciclo del atajo.
-- Modo segundo plano/bandeja.
-- Al cerrar la ventana, la app sigue funcionando en la bandeja.
-- Menú de bandeja para abrir o cerrar la app.
-- Opción de iniciar con Windows.
-- Opción de iniciar minimizada.
-- Interfaz en español, inglés y portugués.
+### Network-Tools
 
-Archivo release:
+Herramienta portable planificada para diagnostico basico de red en Windows:
 
-releases/audio-device-switcher/audio-device-switcher.exe
+- Mostrar interfaces de red.
+- Mostrar IP local, gateway y DNS.
+- Mostrar IP publica.
+- Comprobaciones de ping.
+- Test de puertos TCP.
+- Puertos abiertos locales.
+- Escaneo LAN basico.
+- DHCP, DNS y reset en modo avanzado.
 
-## Estructura del proyecto
-
-tools/
-- audio-device-switcher/
-- bulk-link-downloader/
-
-releases/
-- audio-device-switcher/
-
-## Filosofía
+## Filosofia
 
 Cada herramienta debe ser:
 
-- Pequeña.
-- Útil.
-- Rápida de construir.
-- Fácil de vender o publicar.
+- Pequena.
+- Util.
+- Portable.
+- Rapida de usar.
+- Facil de mantener.
 - Independiente de servidores.
 - Enfocada en un problema claro.
-- Simple de mantener.
 
 ## Notas
 
-Windows SmartScreen puede mostrar un aviso porque los ejecutables todavía no están firmados con certificado.
+Windows SmartScreen puede mostrar un aviso porque los ejecutables aun no estan firmados con certificado.
 
-Para la función de inicio con Windows, si se mueve el .exe portable después de activar la opción, hay que desactivar y activar de nuevo la opción para que Windows guarde la nueva ruta.
+Usa cada herramienta de forma responsable y solo en entornos donde tengas permiso.

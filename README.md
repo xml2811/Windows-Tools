@@ -1,63 +1,45 @@
 # MPTech Windows Tools
 
-Small, practical and portable Windows utilities created by MPTech Tools.
+A catalog of small, practical and portable Windows utilities created by MPTech Tools.
 
-This repository is focused on simple desktop tools for advanced users, technicians, developers, sysadmins and IT professionals.
+This repository works as the main index for the MPTech Windows tools collection. Each tool has its own repository, source code and GitHub Release.
 
 No SaaS. No accounts. No servers. No complex setup.
 
 ## Available tools
 
-### Bulk Link Downloader
+### Audio-Switcher
 
-A lightweight Windows tool to process and download multiple links quickly.
+Portable Windows audio switcher to quickly change the default output device.
 
-Main use cases:
+Useful for switching between speakers, headphones, monitors, HDMI audio, USB headsets or virtual audio devices without opening Windows sound settings.
 
-- Paste multiple links.
-- Download files in batch.
-- Keep a simple local workflow.
-- Avoid browser extension dependency.
+- Repository: https://github.com/xml2811/audio-switcher
+- Download latest version: https://github.com/xml2811/audio-switcher/releases/latest
 
-### Audio Device Switcher
+### Link-Downloader
 
-A portable Windows tool to quickly switch the default audio output device.
+Portable Windows link downloader to detect and download direct links from pasted text.
 
-Main use cases:
+Useful for pasting mixed text with many URLs, detecting direct download links and downloading multiple files locally.
 
-- Switch between speakers, monitors, headphones or audio interfaces.
-- Change the default output device from a clean UI.
-- Use a global keyboard shortcut to cycle between devices.
-- Exclude devices from the shortcut cycle without disabling them in Windows.
-- Keep the app running in the tray.
+- Repository: https://github.com/xml2811/link-downloader
+- Download latest version: https://github.com/xml2811/link-downloader/releases/latest
 
-Current features:
+## Coming next
 
-- Detects active Windows output audio devices.
-- Shows the current default output device.
-- Sets a selected device as default.
-- Cycles to the next output device.
-- Configurable global shortcut.
-- Device include/exclude control for shortcut cycling.
-- Tray/background mode.
-- Closing the window keeps the app running in the tray.
-- Open/close from tray menu.
-- Optional launch with Windows.
-- Optional start minimized.
-- English, Spanish and Portuguese UI.
+### Network-Tools
 
-Release file:
+Planned portable Windows toolkit for basic network diagnostics:
 
-releases/audio-device-switcher/audio-device-switcher.exe
-
-## Project structure
-
-tools/
-- audio-device-switcher/
-- bulk-link-downloader/
-
-releases/
-- audio-device-switcher/
+- Show network interfaces.
+- Show local IP, gateway and DNS.
+- Show public IP.
+- Ping checks.
+- TCP port testing.
+- Local open ports.
+- Basic LAN scan.
+- DHCP/DNS/reset tools in advanced mode.
 
 ## Philosophy
 
@@ -65,14 +47,14 @@ Each tool should be:
 
 - Small.
 - Useful.
-- Fast to build.
-- Easy to sell or publish.
+- Portable.
+- Fast to use.
+- Easy to maintain.
 - Independent from servers.
 - Focused on one clear problem.
-- Simple enough to maintain.
 
 ## Notes
 
-Windows SmartScreen may show a warning because these executables are not code-signed yet.
+Windows SmartScreen may show a warning because the executables are not code-signed yet.
 
-For startup features, if a portable EXE is moved after enabling "Launch with Windows", disable and enable the option again so Windows stores the new path.
+Use each tool responsibly and only in environments where you have permission.
