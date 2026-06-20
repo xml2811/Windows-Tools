@@ -1,51 +1,78 @@
-﻿# Windows Tools
+# MPTech Windows Tools
 
-Small, portable Windows tools created by MPTech Tools.
+Small, practical and portable Windows utilities created by MPTech Tools.
 
-This repository is a collection of lightweight desktop utilities focused on simple and practical tasks.
+This repository is focused on simple desktop tools for advanced users, technicians, developers, sysadmins and IT professionals.
+
+No SaaS. No accounts. No servers. No complex setup.
 
 ## Available tools
 
-### Link Downloader
+### Bulk Link Downloader
 
-Link Downloader is a portable Windows app that detects direct download links from pasted text and downloads all files automatically.
+A lightweight Windows tool to process and download multiple links quickly.
 
-Main features:
+Main use cases:
 
-- Portable EXE
-- No installer
-- No account
-- English, Spanish and Portuguese interface
-- Automatic link detection
-- Destination folder selector
-- Uses the Downloads folder by default
-- Downloads multiple files
-- Avoids overwriting duplicate filenames
-- Opens the destination folder
-- Built with Tauri, React and Rust
+- Paste multiple links.
+- Download files in batch.
+- Keep a simple local workflow.
+- Avoid browser extension dependency.
 
-## Download
+### Audio Device Switcher
 
-The compiled executable is available inside:
+A portable Windows tool to quickly switch the default audio output device.
 
-releases/link-downloader/link-downloader.exe
+Main use cases:
 
-The recommended GitHub workflow is also to publish the executable in the GitHub Releases section.
+- Switch between speakers, monitors, headphones or audio interfaces.
+- Change the default output device from a clean UI.
+- Use a global keyboard shortcut to cycle between devices.
+- Exclude devices from the shortcut cycle without disabling them in Windows.
+- Keep the app running in the tray.
 
-## Repository structure
+Current features:
 
-tools/link-downloader - Source code for Link Downloader.
+- Detects active Windows output audio devices.
+- Shows the current default output device.
+- Sets a selected device as default.
+- Cycles to the next output device.
+- Configurable global shortcut.
+- Device include/exclude control for shortcut cycling.
+- Tray/background mode.
+- Closing the window keeps the app running in the tray.
+- Open/close from tray menu.
+- Optional launch with Windows.
+- Optional start minimized.
+- English, Spanish and Portuguese UI.
 
-releases/link-downloader - Portable executable prepared for release.
+Release file:
 
-docs/screenshots - Screenshots and documentation assets.
+releases/audio-device-switcher/audio-device-switcher.exe
 
-## Responsible use
+## Project structure
 
-These tools are intended only for legitimate and authorized use.
+tools/
+- audio-device-switcher/
+- bulk-link-downloader/
 
-Do not use them to download protected, pirated, private, unauthorized, DRM-protected, paywalled or restricted content.
+releases/
+- audio-device-switcher/
 
-## Brand
+## Philosophy
 
-Created by MPTech Tools.
+Each tool should be:
+
+- Small.
+- Useful.
+- Fast to build.
+- Easy to sell or publish.
+- Independent from servers.
+- Focused on one clear problem.
+- Simple enough to maintain.
+
+## Notes
+
+Windows SmartScreen may show a warning because these executables are not code-signed yet.
+
+For startup features, if a portable EXE is moved after enabling "Launch with Windows", disable and enable the option again so Windows stores the new path.

@@ -1,51 +1,78 @@
-﻿# Windows Tools
+# MPTech Windows Tools
 
-Pequeñas herramientas portables para Windows creadas por MPTech Tools.
+Pequeñas utilidades portables para Windows creadas por MPTech Tools.
 
-Este repositorio es una colección de utilidades de escritorio ligeras, pensadas para resolver tareas simples y prácticas.
+Este repositorio está enfocado en herramientas de escritorio simples para usuarios avanzados, técnicos, desarrolladores, administradores de sistemas y profesionales IT.
+
+Sin SaaS. Sin cuentas. Sin servidores. Sin configuración compleja.
 
 ## Herramientas disponibles
 
-### Link Downloader
+### Bulk Link Downloader
 
-Link Downloader es una aplicación portable para Windows que detecta enlaces directos pegados como texto y descarga todos los archivos automáticamente.
+Herramienta ligera para Windows pensada para procesar y descargar múltiples enlaces rápidamente.
 
-Funciones principales:
+Casos de uso principales:
 
-- EXE portable
-- Sin instalador
-- Sin cuenta
-- Interfaz en inglés, español y portugués
-- Detección automática de enlaces
-- Selector de carpeta de destino
-- Usa la carpeta Descargas por defecto
-- Descarga múltiples archivos
-- Evita sobrescribir archivos con nombres repetidos
-- Permite abrir la carpeta de destino
-- Creado con Tauri, React y Rust
+- Pegar varios enlaces.
+- Descargar archivos en lote.
+- Mantener un flujo de trabajo local y sencillo.
+- Evitar depender de extensiones del navegador.
 
-## Descarga
+### Audio Device Switcher
 
-El ejecutable compilado está disponible en:
+Herramienta portable para Windows que permite cambiar rápidamente el dispositivo de salida de audio predeterminado.
 
-releases/link-downloader/link-downloader.exe
+Casos de uso principales:
 
-Al usar GitHub correctamente, también es recomendable publicar el ejecutable en la sección GitHub Releases.
+- Cambiar entre altavoces, monitores, auriculares o interfaces de audio.
+- Cambiar el dispositivo predeterminado desde una interfaz sencilla.
+- Usar un atajo global de teclado para alternar entre dispositivos.
+- Excluir dispositivos del ciclo del atajo sin deshabilitarlos en Windows.
+- Mantener la app funcionando en segundo plano desde la bandeja del sistema.
 
-## Estructura del repositorio
+Funciones actuales:
 
-tools/link-downloader - Código fuente de Link Downloader.
+- Detecta dispositivos de salida de audio activos en Windows.
+- Muestra el dispositivo de salida predeterminado actual.
+- Permite marcar un dispositivo como predeterminado.
+- Permite cambiar al siguiente dispositivo.
+- Atajo global configurable.
+- Control para incluir/excluir dispositivos del ciclo del atajo.
+- Modo segundo plano/bandeja.
+- Al cerrar la ventana, la app sigue funcionando en la bandeja.
+- Menú de bandeja para abrir o cerrar la app.
+- Opción de iniciar con Windows.
+- Opción de iniciar minimizada.
+- Interfaz en español, inglés y portugués.
 
-releases/link-downloader - Ejecutable portable preparado para release.
+Archivo release:
 
-docs/screenshots - Capturas y recursos de documentación.
+releases/audio-device-switcher/audio-device-switcher.exe
 
-## Uso responsable
+## Estructura del proyecto
 
-Estas herramientas están pensadas solo para usos legítimos y autorizados.
+tools/
+- audio-device-switcher/
+- bulk-link-downloader/
 
-No deben utilizarse para descargar contenido protegido, pirateado, privado, no autorizado, con DRM, de pago o restringido.
+releases/
+- audio-device-switcher/
 
-## Marca
+## Filosofía
 
-Creado por MPTech Tools.
+Cada herramienta debe ser:
+
+- Pequeña.
+- Útil.
+- Rápida de construir.
+- Fácil de vender o publicar.
+- Independiente de servidores.
+- Enfocada en un problema claro.
+- Simple de mantener.
+
+## Notas
+
+Windows SmartScreen puede mostrar un aviso porque los ejecutables todavía no están firmados con certificado.
+
+Para la función de inicio con Windows, si se mueve el .exe portable después de activar la opción, hay que desactivar y activar de nuevo la opción para que Windows guarde la nueva ruta.

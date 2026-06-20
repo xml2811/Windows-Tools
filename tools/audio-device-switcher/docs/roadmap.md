@@ -1,25 +1,58 @@
-﻿# Audio Device Switcher Roadmap
+# Audio Device Switcher Roadmap
 
-## V1 Free
+## Completed
 
-- Detect output audio devices.
-- Show current default output device.
-- Set selected device as default.
-- Global hotkey for quick switching.
-- Launch at startup.
-- Start minimized.
-- Basic tray behavior if viable.
-- Local settings.
-- English, Spanish and Portuguese UI.
+- Initial Tauri + React + TypeScript scaffold.
+- Dark MPTech Tools UI.
+- Real Windows audio output device detection.
+- Current default output device display.
+- Set selected output device as default.
+- Cycle to next output device.
+- Configurable global shortcut.
+- Device exclusion from shortcut cycle.
+- Tray/background mode.
+- Close window to tray.
+- Tray menu with Open app and Close app.
+- Optional launch with Windows.
+- Optional start minimized.
+- English, Spanish and Portuguese translations.
+- Portable release executable generated.
 
-## V2 Pro Ideas
+## Next possible improvements
 
-- Multiple custom hotkeys.
-- Favorite device profiles.
-- Input/microphone switching.
-- Output + input combined profiles.
-- Streaming mode.
-- Gaming mode.
-- Work mode.
+### V1 polish
+
+- Replace provisional icon with final MPTech Tools icon.
+- Improve final window sizing and very small responsive states.
+- Add Reset settings button.
+- Add a small first-run explanation.
+- Add signed executable when budget allows.
+
+### V2 ideas
+
+- Per-device custom shortcut.
+- One shortcut per selected device.
 - Import/export settings.
-- Signed executable.
+- Better audio device icons.
+- Toast notification after switching device.
+- Optional sound test button.
+- Detect disconnected/reconnected devices more elegantly.
+- Automatic refresh when Windows audio devices change.
+
+## Commercial notes
+
+This tool is simple, local and useful for:
+
+- Streamers.
+- Developers.
+- Sysadmins.
+- Gamers.
+- Remote workers.
+- Users with multiple monitors/audio outputs.
+- Technicians who frequently test devices.
+
+Possible monetization:
+
+- Free basic portable version.
+- Paid Pro version with per-device shortcuts, profiles and notifications.
+- Bundle with other MPTech Windows Tools.
