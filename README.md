@@ -1,60 +1,66 @@
-# MPTech Windows Tools
+# Windows Tools
 
-A catalog of small, practical and portable Windows utilities created by MPTech Tools.
+A growing collection of small, portable Windows utilities built for technicians, sysadmins, developers, IT students and advanced users.
 
-This repository works as the main index for the MPTech Windows tools collection. Each tool has its own repository, source code and GitHub Release.
+The goal of this repository is to work as a public catalog for independent Windows tools created under the MPTech Tools line.
 
-No SaaS. No accounts. No servers. No complex setup.
+Each tool has its own repository and release page.
 
-## Available tools
+## Tools
 
-### Audio-Switcher
+### Audio Device Switcher
 
-Portable Windows audio switcher to quickly change the default output device.
+Quickly switch between Windows audio output devices from a simple desktop utility.
 
-Useful for switching between speakers, headphones, monitors, HDMI audio, USB headsets or virtual audio devices without opening Windows sound settings.
+- Repository: https://github.com/xml2811/Audio-Switcher
+- Download: https://github.com/xml2811/Audio-Switcher/releases/latest
 
-- Repository: https://github.com/xml2811/audio-switcher
-- Download latest version: https://github.com/xml2811/audio-switcher/releases/latest
+### Link Downloader
 
-### Link-Downloader
+Small Windows utility for downloading links and keeping a simple local workflow.
 
-Portable Windows link downloader to detect and download direct links from pasted text.
+- Repository: https://github.com/xml2811/Link-Downloader
+- Download: https://github.com/xml2811/Link-Downloader/releases/latest
 
-Useful for pasting mixed text with many URLs, detecting direct download links and downloading multiple files locally.
+### MPTech Network Tools
 
-- Repository: https://github.com/xml2811/link-downloader
-- Download latest version: https://github.com/xml2811/link-downloader/releases/latest
+Portable Windows toolkit for network diagnostics, local network scan, ping, TCP ports, traceroute and TXT reports.
 
-## Coming next
+- Repository: https://github.com/xml2811/Network-Tools
+- Download: https://github.com/xml2811/Network-Tools/releases/latest
 
-### Network-Tools
+## Why this catalog exists
 
-Planned portable Windows toolkit for basic network diagnostics:
+This repository is not a monolithic app.
 
-- Show network interfaces.
-- Show local IP, gateway and DNS.
-- Show public IP.
-- Ping checks.
-- TCP port testing.
-- Local open ports.
-- Basic LAN scan.
-- DHCP/DNS/reset tools in advanced mode.
+It is a catalog of focused Windows utilities. Each tool is designed to solve a specific problem without requiring accounts, servers, subscriptions or complex setup.
 
-## Philosophy
+## Current tools
 
-Each tool should be:
+| Tool | Status | Main use |
+|---|---|---|
+| Audio Device Switcher | Released | Switch audio output devices |
+| Link Downloader | Released | Download links from a desktop utility |
+| MPTech Network Tools | Released | Network diagnostics and local scan |
 
-- Small.
-- Useful.
-- Portable.
-- Fast to use.
-- Easy to maintain.
-- Independent from servers.
-- Focused on one clear problem.
+## Planned direction
 
-## Notes
+Future tools may include:
 
-Windows SmartScreen may show a warning because the executables are not code-signed yet.
+- SSH Manager
+- Port Tester
+- SSL Checker
+- Hosts File Editor
+- Clipboard Utility
+- Docker Launcher
+- System Diagnostic Tools
 
-Use each tool responsibly and only in environments where you have permission.
+## Author
+
+Created by Xavier Madrid Lerga.
+
+GitHub: https://github.com/xml2811
+
+## License
+
+Each tool may include its own license. Check the repository of each project.
