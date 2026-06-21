@@ -18,7 +18,7 @@ Portable Windows utility for downloading links and keeping a simple local workfl
 - Repository: https://github.com/xml2811/Link-Downloader
 - Download: https://github.com/xml2811/Link-Downloader/releases/latest
 
-### MPTech Network Tools
+### Network Tools
 Portable Windows toolkit for network diagnostics, local network scan, ping, TCP ports, traceroute and TXT reports.
 
 - Repository: https://github.com/xml2811/Network-Tools
