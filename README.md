@@ -69,11 +69,13 @@ Use each tool responsibly and only in environments where you have permission.
 
 ## License
 
-Each tool has its own license. Some projects may be source-available for non-commercial use only.
+This project is source-available for personal, educational and non-commercial use only.
 
-Check each individual repository before reusing or redistributing the code.
+You may view, study, download and modify the code for your own personal or internal non-commercial use.
 
-## Author
+You may not sell, resell, sublicense, commercially redistribute, include it in paid products/services, or publish modified commercial versions without prior written permission.
+
+See [LICENSE](LICENSE).## Author
 
 Created by Xavier Madrid Lerga.
 

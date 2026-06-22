@@ -69,11 +69,13 @@ Usa cada herramienta de forma responsable y solo en entornos donde tengas permis
 
 ## Licencia
 
-Cada herramienta tiene su propia licencia. Algunos proyectos pueden tener código visible solo para uso no comercial.
+Este proyecto tiene cÃ³digo visible para uso personal, educativo y no comercial.
 
-Revisa cada repositorio individual antes de reutilizar o redistribuir el código.
+Puedes ver, estudiar, descargar y modificar el cÃ³digo para tu propio uso personal o interno no comercial.
 
-## Autor
+No puedes venderlo, revenderlo, sublicenciarlo, redistribuirlo comercialmente, incluirlo en productos/servicios de pago ni publicar versiones modificadas comerciales sin permiso previo por escrito.
+
+Consulta [LICENSE](LICENSE).## Autor
 
 Creado por Xavier Madrid Lerga.
 
