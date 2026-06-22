@@ -1,4 +1,4 @@
-﻿# MPTech Windows Tools
+# MPTech Windows Tools
 
 A growing collection of small, portable Windows utilities built for technicians, sysadmins, developers, IT students and advanced users.
 
@@ -80,8 +80,3 @@ See [LICENSE](LICENSE).## Author
 Created by Xavier Madrid Lerga.
 
 GitHub: https://github.com/xml2811
-
-## Screenshots
-
-Screenshots will be added in docs/screenshots/.
-
